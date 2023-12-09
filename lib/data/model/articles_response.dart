@@ -1,6 +1,5 @@
 import 'package:news_app/data/model/sources_response.dart';
 
-
 class ArticlesResponse {
   String? status;
   int? totalResults;

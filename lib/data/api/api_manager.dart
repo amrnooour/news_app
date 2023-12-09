@@ -6,12 +6,12 @@ import '../model/articles_response.dart';
 
 abstract class ApiManager {
   static const String baseUrl = "newsapi.org";
-  static const String apiKey = "20d466efd7e74c0fa5fc03895b1780d3";
+  static const String apiKey = "a2803275cc264f5ab82151862011361a";
   static const String sourcesEndPoint = "/v2/top-headlines/sources";
   static const String articlesEndPoint = "/v2/everything";
 
-  static Future<List<Source>> getSources() async {
-    Uri url = Uri.parse("https://$baseUrl$sourcesEndPoint?apiKey=$apiKey");
+  static Future<List<Source>> getSources(String category) async {
+    Uri url = Uri.parse("https://$baseUrl$sourcesEndPoint?apiKey=$apiKey&category=$category");
     Response response = await get(url);
     Map json = jsonDecode(response.body);
     //print(json);
